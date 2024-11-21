@@ -1,0 +1,24 @@
+// src/screens/Alarm.js
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+export default function Alarm() {
+    const [alarmTime, setAlarmTime] = useState('07:00 AM');
+
+    const setSmartAlarm = () => {
+        alert('Smart Alarm Set for ' + alarmTime);
+    };
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Set Alarm</Text>
+            <Text>Current Alarm: {alarmTime}</Text>
+            <Button title="Set Alarm" onPress={setSmartAlarm} />
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+    title: { fontSize: 18, marginBottom: 20 },
+});
