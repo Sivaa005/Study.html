@@ -13,22 +13,21 @@
 
     <section class="upload-section">
         <h2>Upload Study Material</h2>
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="title" placeholder="Enter Material Title" required>
-            <input type="text" name="subject" placeholder="Enter Subject" required>
-            <input type="file" name="file" accept=".pdf,.ppt,.pptx,.doc,.docx,.txt" required>
-            <button type="submit" name="upload">Upload</button>
+        <form id="uploadForm">
+            <input type="text" id="title" placeholder="Enter Material Title" required>
+            <input type="text" id="subject" placeholder="Enter Subject" required>
+            <input type="file" id="fileInput" accept=".pdf,.ppt,.pptx,.doc,.docx,.txt" required>
+            <button type="submit">Upload</button>
         </form>
     </section>
 
     <section class="materials-section">
         <h2>Available Materials</h2>
-        <form action="delete_all.php" method="POST" onsubmit="return confirm('Delete ALL materials?');">
-            <button type="submit" class="delete-btn">Delete All Materials</button>
-        </form>
-        <div class="materials-list">
-            <?php include 'view.php'; ?>
+        <div id="materialsList" class="materials-list">
+            <!-- Uploaded materials will appear here -->
         </div>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
